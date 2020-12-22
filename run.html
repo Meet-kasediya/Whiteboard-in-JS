@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="a.css">
+    <script src="a.js"></script>
+    <title>Whiteboard with JS
+    </title>
+</head>
+<body>
+
+ 
+    <img id="pen" src="a.png" alt="test" height="4px" width="4px" />
+    <div id="r"></div>
+
+
+<script> 
+window.onmouseover = function (event) {
+'use strict';
+var element = document.getElementById('pen').cloneNode();
+document.getElementById('r').appendChild(element);
+element.style.display = 'inline';
+element.style.left = event.clientX - (element.offsetWidth / 2) + 'px';
+element.style.top = event.clientY - (element.offsetHeight / 2) + 'px';
+};
+</script>
+
+
+<div class="main">
+❖ Colour: 
+<button onmouseover="clr1()">1</button>
+<button onmouseover="clr2()">2</button>
+<button onmouseover="clr3()">3</button>
+<button onmouseover="clr4()">4</button>
+<button onmouseover="clr5()">5</button>
+<button onmouseover="clr6()">6</button>
+<button onmouseover="clr7()">7</button> 
+<br><br>
+❖Height:
+<button onmouseover="plus()">  ⬆ </button>
+|
+<button onmouseover="minus()"> ⬇ </button> 
+❖ width:
+<button onmouseover="pls()">  ⬆  </button>
+|
+<button onmouseover="mins()"> ⬇ </button> 
+
+<br>
+ <br>
+❖ Thickness:
+<button onmouseover="thicker()">q</button>
+|
+<button onmouseover="thinner()">w</button>
+
+<br><br>
+<center>
+<button class="swap" style="background-color: #497959;" onclick="swap1()">Greenboard</button>
+<button class="swap"  onclick="swap2()">Whiteboard</button>
+</center>
+</div>
+\
+<button class="clear" onmousemove="ud()"> ⟲ </button>
+<button id="new" onclick="nw()">✧ New Session</button>
+ 
+    
+ 
+</body>
+</html>
